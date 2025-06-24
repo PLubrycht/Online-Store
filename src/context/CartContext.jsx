@@ -11,8 +11,16 @@ export const CartProvider = ({ children }) => {
     setCart((prev) => [...prev, product]);
   };
 
-  const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  const removeFromCart = (productId) => {
+    setCart((prevItems) => {
+      const index = prevItems.findIndex(item => item.id === productId);
+      if (index !== -1) {
+        const updated = [...prevItems];
+        updated.splice(index, 1); // usuń tylko jedną sztukę tego produktu
+        return updated;
+      }
+      return prevItems;
+    });
   };
 
   const clearCart = () => setCart([]);
