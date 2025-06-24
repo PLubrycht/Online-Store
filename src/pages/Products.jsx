@@ -1,6 +1,6 @@
 import  mockProducts  from "../api/mockProducts";
 import ProductCard from "../components/ProductCard/ProductCard";
-import  "./Products.css"; // Assuming you have a CSS file for styling
+import  "./Products.css"; 
 
 const Products = () => {
   return (
@@ -8,7 +8,7 @@ const Products = () => {
       <h2>Nasze Produkty</h2>
       <div className="product-list">
         {mockProducts.map((product) => (
-          <ProductCard key={product.id} {...product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </section>
