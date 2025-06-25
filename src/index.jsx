@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'aos/dist/aos.css'; // ← dodajemy import styli AOS
 import App from './App';
 import { CartProvider } from "./context/CartContext";
 

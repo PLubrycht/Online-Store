@@ -1,0 +1,20 @@
+.cart {
+  padding: 20px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart img {
+  width: 50px;
+  height: auto;
+}
