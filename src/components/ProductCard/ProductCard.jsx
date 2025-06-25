@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link to={`/products/${product.id}`} className="product-link">
-      <div className="product-card">
+      <div className="product-card" data-aos="zoom-in">
         <img src={product.image} alt={product.name} />
         <h3>{product.name}</h3>
         <p>{product.price} zł</p>

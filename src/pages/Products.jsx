@@ -5,7 +5,7 @@ import  "./Products.css";
 const Products = () => {
   return (
     <section className="products">
-      <h2>Nasze Produkty</h2>
+      <h2 data-aos="fade-right">Nasze Produkty</h2>
       <div className="product-list">
         {mockProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
