@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import "./Home.css";
 import { Link } from "react-router-dom";
 import mockProducts from "../api/mockProducts";
@@ -9,10 +10,9 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-
 const Home = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 800, once: true });
   }, []);
 
   const featured = mockProducts.slice(0, 3);
@@ -26,35 +26,31 @@ const Home = () => {
         <Link to="/products" className="hero-btn">Zobacz produkty</Link>
       </section>
 
-      {/* Featured Products */}
-<section className="featured" data-aos="fade-up">
-  <h2>Polecane produkty</h2>
-  <Swiper
-    modules={[Navigation]}
-    navigation
-    slidesPerView={3}
-    centeredSlides={true}
-    loop={true}
-    className="featured-swiper"
-    breakpoints={{
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 3 }
-    }}
-  >
-    {featured.map((product) => (
-      <SwiperSlide key={product.id}>
-        <div className="carousel-card">
-          <img src={product.image} alt={product.name} />
-          <div className="product-info">
-            <h3>{product.name}</h3>
-            <p>{product.price} zł</p>
-            <Link to={`/products/${product.id}`}>Szczegóły</Link>
-          </div>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</section>
+      {/* Featured Carousel */}
+      <section className="featured" data-aos="fade-up">
+        <h2>Polecane produkty</h2>
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          loop={true}
+          slidesPerView={1}
+          spaceBetween={20}
+          className="featured-swiper"
+        >
+          {featured.map((product) => (
+            <SwiperSlide key={product.id}>
+              <div className="carousel-card">
+                <img src={product.image} alt={product.name} />
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p>{product.price} zł</p>
+                  <Link to={`/products/${product.id}`}>Szczegóły</Link>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
 
       {/* Benefits */}
       <section className="benefits" data-aos="fade-up">

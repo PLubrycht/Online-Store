@@ -1,118 +1,136 @@
-/* Ogólny styl */
+/* Home.css - optimized for single-slide centered carousel */
+
+/* ==== GENERAL ==== */
 .home {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0;
   margin: 0;
+  padding: 0;
   background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
   color: #333;
 }
 
-/* Hero */
+/* ==== HERO SECTION ==== */
 .hero {
   text-align: center;
   padding: 100px 20px 80px;
   background: linear-gradient(145deg, #4a90e2 0%, #50e3c2 100%);
-  color: white;
+  color: #fff;
+  margin-bottom: 0;
 }
-
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
-
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
-
-.hero .btn {
+.hero-btn {
+  display: inline-block;
   padding: 12px 30px;
   font-size: 1rem;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #4a90e2;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   text-decoration: none;
 }
-
-.hero .btn:hover {
-  background-color: #e6f0ff;
+.hero-btn:hover {
   transform: scale(1.05);
 }
 
-/* Produkty */
-.featured-products {
-  padding: 60px 20px;
+/* ==== FEATURED CAROUSEL ==== */
+.featured {
+  background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
+  padding: 4rem 1rem 2rem; /* mniejszy dolny padding */
+  margin: 0;
+  border-radius: 1rem;
   text-align: center;
 }
 
-.featured-products h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+.featured h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.products-grid {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 0 10px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Kontener karuzeli – zawsze 1 slajd */
+.featured-swiper {
+  width: 100%;
+  max-width: 500px;    /* ograniczamy szerokość na desktopie */
+  margin: 0 auto;      /* wyśrodkowanie */
+  overflow: visible;
 }
 
-.product-card {
+/* Slajdy – każdy zajmuje całą szerokość kontenera i centruje kartę */
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Karta produktu */
+.carousel-card {
+  width: 100%;
+  max-width: 400px;
   background: #fff;
+  border-radius: 12px;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  text-decoration: none;
-  color: inherit;
 }
 
-.product-card:hover {
+/* Styl hover */
+.carousel-card:hover {
   transform: translateY(-5px);
 }
 
-.product-card img {
+/* Obrazek */
+.carousel-card img {
   width: 100%;
-  height: 200px;
-  object-fit: contain;
+  height: auto;
+  border-radius: 8px;
   margin-bottom: 15px;
 }
 
-.product-card h3 {
+/* Info o produkcie */
+.product-info h3 {
   font-size: 1.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+}
+.product-info p {
+  color: #555;
+  margin-bottom: 12px;
+}
+.product-info a {
+  color: #6200ea;
+  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
-.product-card p {
-  font-size: 1rem;
-  color: #4a4a4a;
+/* Strzałki */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #4a90e2 !important;
 }
-
-/* Dlaczego my */
+/* ==== BENEFITS SECTION ==== */
 .benefits {
   padding: 60px 20px;
   background-color: #f9f9f9;
   text-align: center;
 }
-
 .benefits h2 {
   font-size: 2rem;
   margin-bottom: 30px;
 }
-
 .benefits ul {
   list-style: none;
   padding: 0;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
 }
-
 .benefits li {
   font-size: 1.2rem;
   margin-bottom: 20px;
@@ -122,105 +140,40 @@
   gap: 12px;
 }
 
-/* Technologie */
+/* ==== TECHNOLOGIES SECTION ==== */
 .technologies {
   padding: 60px 20px;
   text-align: center;
 }
-
 .technologies h2 {
   font-size: 2rem;
   margin-bottom: 30px;
 }
-
 .tech-icons {
   display: flex;
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
 }
-
-.tech-icons i {
-  font-size: 3rem;
-  color: #4a90e2;
-  transition: transform 0.3s ease;
+.tech-icons img {
+  width: 48px;
+  height: 48px;
 }
-
-.tech-icons i:hover {
-  transform: scale(1.2);
-}
-
-.tech-icons span {
-  display: block;
+.tech-icons p {
   margin-top: 8px;
   font-size: 0.9rem;
   color: #333;
-}
-.featured-swiper {
-  width: 100%;
-  padding: 2rem 0;
-}
-
-.carousel-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.4s ease;
-  border-radius: 12px;
-  background: #f4f4f4;
-  padding: 1rem;
-}
-
-.swiper-slide {
-  opacity: 0.3;
-  transform: scale(0.8);
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-}
-
-.swiper-slide-prev,
-.swiper-slide-next {
-  opacity: 0.5;
-  transform: scale(0.9);
-}
-
-.swiper-slide-active {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-
-.carousel-card img {
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.product-info {
   text-align: center;
 }
 
-.featured {
-  background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
-  padding: 4rem 1rem;
-  border-radius: 1rem;
-  margin: 2rem 0;
-}
-
-.featured h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #333;
-}
-
-
+/* ==== RESPONSIVE ==== */
 @media (max-width: 767px) {
+  .featured-swiper {
+    max-width: 90% ;
+  }
   .carousel-card img {
     max-width: 150px;
   }
-
   .product-info {
     font-size: 0.9rem;
   }
