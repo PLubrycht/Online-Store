@@ -177,4 +177,15 @@
   .product-info {
     font-size: 0.9rem;
   }
+  .nav-links { 
+    gap: 10px; 
+  }
+  .benefits li { 
+    font-size: 1rem; 
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .tech-icons { gap: 20px; }
 }
