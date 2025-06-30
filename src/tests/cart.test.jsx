@@ -1,4 +1,5 @@
-// Cart.test.jsx
+// src/tests/cart.test.jsx
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Cart from "../pages/Cart";
 import { CartProvider } from "../context/CartContext";
@@ -14,7 +15,6 @@ describe("Cart component", () => {
       </Router>
     );
 
-    const emptyMessage = screen.getByText(/Twój koszyk jest pusty/i);
-    expect(emptyMessage).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /koszyk jest pusty/i })).toBeInTheDocument();
   });
 });
