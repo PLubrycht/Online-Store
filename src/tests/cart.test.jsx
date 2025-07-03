@@ -1,7 +1,7 @@
 // src/tests/cart.test.jsx
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Cart from "../components/pages/Cart";
+import Cart from "../pages/Cart";
 import { CartProvider } from "../context/CartContext";
 import { BrowserRouter as Router } from "react-router-dom";
 
